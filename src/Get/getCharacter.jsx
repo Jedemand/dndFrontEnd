@@ -92,9 +92,9 @@ function GetCharacter () {
 
                             <ul>
                                 <h3>Senses</h3>
-                                {character.senses.map(sense => {
-                                    return <li>{sense}</li>
-                                })}
+                                {Object.entries(character.senses).map(sense => {
+                                        return <li>{sense[0]} : {sense[1]}</li>
+                                    })}
                             </ul>
 
                             <ul>
@@ -154,9 +154,7 @@ function GetCharacter () {
                                                     <li>{weapon.weight}</li>
                                                     <li>{weapon.description}</li>
                                                     <li>{weapon.dice}{weapon.dmgType}</li>
-                                                    <li>{weapon.properties.map(propt => {
-                                                        return <li>{propt}</li>
-                                                    })}</li>
+                                                    <li>{weapon.properties}</li>
                                                 </ul>
                                                 
 
